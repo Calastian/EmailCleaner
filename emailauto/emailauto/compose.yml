@@ -1,0 +1,7 @@
+services:
+  emailauto:
+    image: ghcr.io/calastian/emailcleaner:latest
+    container_name: emailauto
+    restart: unless-stopped
+    env_file:
+      - .env
