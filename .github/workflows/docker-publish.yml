@@ -35,4 +35,4 @@ jobs:
           context: ./emailauto/emailauto
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/emailauto:latest
+            ghcr.io/calastian/emailauto:latest
