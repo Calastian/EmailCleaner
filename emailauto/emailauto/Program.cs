@@ -28,21 +28,42 @@ var highAllowDomains = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 {
     // "yourcompany.com",
     // "yourbank.com",
+    "wellsfargo.com",
+    "handshake.com",
+    "handshake.com",
+    "linkedin.com",
+    "indeed.com",
+    "accounts.google.com",
+    "google.com",
+    "microsoft.com",
+    "apple.com",
+    "amazon.com",
 };
 
 var lowKeywords = new[]
 {
-    "unsubscribe", "newsletter", "promo", "promotion", "sale", "deal", "% off", "webinar", "limited time"
+    "unsubscribe", "newsletter", "promo", "promotion", "sale", "deal", "% off", "webinar", "limited time",
+    "special offer", "exclusive offer", "shop now", "buy now", "order now", "save big", "discount",
+    "clearance", "coupon", "coupon code", "flash sale", "free shipping", "daily deals", "bundle",
+    "last chance", "act now", "don’t miss", "dont miss", "member offer", "marketing", "advertisement",
+    "sponsored", "announcement", "new arrivals", "just dropped", "recommended for you", "trending now"
 };
 
 var highKeywords = new[]
 {
-    "invoice", "receipt", "order", "interview", "offer", "appointment", "urgent", "contract"
+    "invoice", "receipt", "order", "interview", "offer", "appointment", "contract",
+    "meeting", "calendar invite", "schedule", "reschedule", "payment", "payment received",
+    "statement", "account notice", "verification", "security alert", "login alert", "password reset",
+    "support ticket", "case number", "application", "job application", "reference", "follow-up",
+    "follow up", "proposal", "quote", "estimate", "reminder", "confirmation", "booking confirmation",
+    "shipping confirmation", "delivery update", "bank transfer", "wire transfer", "attached invoice"
 };
 
 var personDomains = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
 {
-    "gmail.com", "outlook.com", "hotmail.com", "live.com", "yahoo.com", "icloud.com", "me.com"
+    "gmail.com", "outlook.com", "hotmail.com", "live.com", "yahoo.com", "icloud.com", "me.com",
+    "aol.com", "proton.me", "protonmail.com", "pm.me", "gmx.com", "gmx.us", "mail.com",
+    "yandex.com", "yandex.ru", "zoho.com", "fastmail.com", "qq.com", "163.com", "126.com"
 };
 
 while (true)
@@ -98,7 +119,7 @@ while (true)
             inbox.CopyTo(uid, target);
 
             // Mark seen (optional) and remove from Inbox
-            inbox.AddFlags(uid, MessageFlags.Seen, true);
+            //inbox.AddFlags(uid, MessageFlags.Seen, true);
             inbox.AddFlags(uid, MessageFlags.Deleted, true);
 
             processed++;
