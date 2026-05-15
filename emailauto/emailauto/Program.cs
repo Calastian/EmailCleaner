@@ -116,7 +116,14 @@ while (true)
             Console.WriteLine($"{DateTimeOffset.Now:u} [{target.Name}] {fromAddress} | {msg.Subject}");
 
             // Copy to label folder
-            inbox.CopyTo(uid, target);
+            var copiedUid = inbox.CopyTo(uid, target);
+
+            // Mark as unread in the target folder
+            if (copiedUid.HasValue)
+            {
+                target.Open(FolderAccess.ReadWrite);
+                target.RemoveFlags(copiedUid.Value, MessageFlags.Seen, true);
+            }
 
             // Mark seen (optional) and remove from Inbox
             //inbox.AddFlags(uid, MessageFlags.Seen, true);
