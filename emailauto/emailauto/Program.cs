@@ -38,6 +38,7 @@ var highAllowDomains = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
     "microsoft.com",
     "apple.com",
     "amazon.com",
+    "tankteksoftware.com",
 };
 
 var lowKeywords = new[]
@@ -56,7 +57,7 @@ var highKeywords = new[]
     "statement", "account notice", "verification", "security alert", "login alert", "password reset",
     "support ticket", "case number", "application", "job application", "reference", "follow-up",
     "follow up", "proposal", "quote", "estimate", "reminder", "confirmation", "booking confirmation",
-    "shipping confirmation", "delivery update", "bank transfer", "wire transfer", "attached invoice", "me",
+    "shipping confirmation", "delivery update", "bank transfer", "wire transfer", "attached invoice", "me"
 };
 
 var personDomains = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
