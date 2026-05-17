@@ -123,6 +123,7 @@ while (true)
             {
                 target.Open(FolderAccess.ReadWrite);
                 target.RemoveFlags(copiedUid.Value, MessageFlags.Seen, true);
+                inbox.Open(FolderAccess.ReadWrite);
             }
 
             // Mark seen (optional) and remove from Inbox
